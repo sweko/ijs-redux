@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NavigationBarComponent implements OnInit {
 
   @Input() value: number;
+  @Input() title:string;
 
   constructor() { }
 
