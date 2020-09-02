@@ -7,15 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GeneralContainerComponent implements OnInit {
 
-  actualValue: number = 10;
-
   constructor() { }
 
   ngOnInit() {
   }
-
-  changeValue(value: number) {
-    this.actualValue = value;
-  }
-
 }

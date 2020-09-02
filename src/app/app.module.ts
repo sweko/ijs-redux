@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ComponentsModule } from './components';
+import { Store } from "./services/flux-service";
 
 @NgModule({
   declarations: [
@@ -12,7 +13,9 @@ import { ComponentsModule } from './components';
     BrowserModule,
     ComponentsModule
   ],
-  providers: [],
+  providers: [
+    Store
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

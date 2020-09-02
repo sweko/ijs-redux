@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Store } from 'src/app/services/flux-service';
 
 @Component({
   selector: 'show-number',
@@ -7,11 +8,12 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ShowNumberComponent implements OnInit {
 
-  @Input() value: number;
+  value: number;
 
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit() {
+    this.value = this.store.state.value;
   }
 
 }
