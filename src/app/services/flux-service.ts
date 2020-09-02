@@ -1,4 +1,6 @@
 import { Injectable } from "@angular/core";
+import { actions, Action } from './actions';
+import { never } from 'rxjs';
 
 export interface State {
     value: number;
@@ -32,9 +34,15 @@ export class Store {
         };
     }
 
-    public setState(newState: State) {
-        console.log("State has been updated");
-        this.state = newState;
+    public executeAction(action: Action) {
+        const reducer = actions[action];
+        this.state = reducer(this.state, undefined);
         this.notifyStateChange();
     }
+
+    // public setState(newState: State) {
+    //     console.log("State has been updated");
+    //     this.state = newState;
+    //     this.notifyStateChange();
+    // }
 }

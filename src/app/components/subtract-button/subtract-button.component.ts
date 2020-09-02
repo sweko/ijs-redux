@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Store } from 'src/app/services/flux-service';
+import { Action } from 'src/app/services/actions';
 
 @Component({
   selector: 'subtract-button',
@@ -14,8 +15,7 @@ export class SubtractButtonComponent implements OnInit {
   }
 
   subtract() {
-    const state = this.store.getState();
-    this.store.setState({ value: state.value - 1});
+    this.store.executeAction(Action.Decrement);
   }
 
 }
