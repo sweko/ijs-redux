@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'general-container',
@@ -7,15 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GeneralContainerComponent implements OnInit {
 
-  actualValue: number = 10;
-
+  @Input() actualValue: number;
+  @Output() changeValue: EventEmitter<number> = new EventEmitter();
+  
   constructor() { }
 
   ngOnInit() {
   }
 
-  changeValue(value: number) {
+  doChangeValue(value: number) {
     this.actualValue = value;
+    this.changeValue.emit(this.actualValue);
   }
 
 }
