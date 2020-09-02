@@ -14,7 +14,8 @@ export class SubtractButtonComponent implements OnInit {
   }
 
   subtract() {
-    this.store.state.value = this.store.state.value - 1;
+    const state = this.store.getState();
+    this.store.setState({ value: state.value - 1});
   }
 
 }
