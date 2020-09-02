@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ijs-redux"
+    }
+  },
+  "defaultProject": "ijs-redux",
+  "cli": {
+    "analytics": "71cfe6d7-d7fb-45cb-afdc-0f89d84554d6"
+  }
 }
