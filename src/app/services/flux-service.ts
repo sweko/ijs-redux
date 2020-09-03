@@ -34,9 +34,9 @@ export class Store {
         };
     }
 
-    public executeAction(action: Action) {
+    public executeAction(action: Action, payload: any) {
         const reducer = actions[action];
-        this.state = reducer(this.state, undefined);
+        this.state = reducer(this.state, payload);
         this.notifyStateChange();
     }
 

@@ -15,7 +15,7 @@ export class AddButtonComponent implements OnInit {
   }
 
   add() {
-    this.store.executeAction(Action.Increment);
+    this.store.executeAction(Action.IncrementBy, 3);
   }
 
 }
