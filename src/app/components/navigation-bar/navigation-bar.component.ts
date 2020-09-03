@@ -9,6 +9,8 @@ export class NavigationBarComponent implements OnInit {
 
   @Input() title:string;
 
+  @Input() value: number;
+
   constructor() { }
 
   ngOnInit() {
